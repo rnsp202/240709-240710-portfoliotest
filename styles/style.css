@@ -89,3 +89,94 @@ nav a {
     padding: 100px 0;
     background: linear-gradient(180deg, #301dfd, #b2bbff, #301dfd);
 }
+/* 3-1. 앱 디자인 */
+.project .app {
+    display: flex;
+}
+.project .app .thum {}
+.project .app .thum img {width: 100%;}
+.project .app .app_info {}
+.project .app .app_info p {}
+.project .app .app_info h3 {}
+.project .app .app_info .date {}
+.project .app .app_info ul {}
+.project .app .app_info ul li {}
+/* 3-2. 웹 디자인 */
+.project .web {
+    position: relative;
+}
+.project .web .swiper {max-width: 1000px;}
+.project .web .swiper-slide {display: flex;}
+.project .web div[class^=swiper-button] {color: #fff;}
+/* 3-2. sns 디자인 */
+.project .sns {max-width: 1920px;}
+.project .sns .swiper-wrapper {transition-timing-function: linear;}/*일정속도*/
+.project .sns .swiper-slide {align-self: center;}/*Flex 내장*/
+.project .sns .swiper-slide img {width: 100%;}
+/* 3-2. sns 디자인 */
+.project .banner {
+    display: flex; flex-flow: row wrap;
+    justify-content: space-between;
+}
+/* 배너 디자인 */
+.project .banner p {width: calc(50% - 3px);}
+.project .banner p img {width: 100%;}
+/* 디테일 디자인 */
+.project .detail .swiper {height: 500px;} /*overflow:hidden; 내장*/
+.project .detail .swiper-slide a {
+    display: block; height: 500px;
+    position: relative;
+}
+.project .detail .swiper-slide a::before {
+    content: '';
+    display: block;
+    height: 100px; width: 100%;
+    background: linear-gradient(360deg, #301dfd, transparent);
+    position: absolute; left: 0; bottom: 0;
+    z-index: 999;
+}
+.project .detail .swiper-slide img {width: 100%;}
+/* 상세 팝업 */
+.big_bg {
+    position: fixed;
+    left: 0; top: 0; z-index: 999;
+    width: 100%; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.big_bg .img {
+    max-width: 50vw; margin: 30px auto;
+    height: 90vh; overflow-y: auto; overflow-x: hidden;
+}
+.big_bg .img img {width: 100%;}
+/* 스크롤바 꾸미기 */
+.big_bg .img::-webkit-scrollbar {
+    background: #333;
+    width: 8px; height: 10px;
+}
+.big_bg .img::-webkit-scrollbar-thumb {
+    background: rgb(185, 183, 255);
+}
+
+/* 반응형웹 1200, 800, 600 */
+@media screen and (max-width:1200px){
+    h1 {font-size: 8rem;}
+}
+@media screen and (max-width:800px){
+    h1 {font-size: 5rem;}
+    .profile {height: max-content;}
+    .profile .txt {
+        grid-template-areas: 
+            'a'
+            'b'
+            'c';
+    }
+}
+@media screen and (max-width:600px){
+    h1 {font-size: 3rem;}
+    .profile {height: max-content;}
+    .profile .photo {display: none;}
+    .profile .txt {width: 100%;}
+    .project .app {flex-flow: column;}
+    .project .web .swiper-slide {flex-flow: column;}
+}
+
